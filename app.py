@@ -8,6 +8,16 @@ st.title("Flood Risk Predictor 🌧️")
 # app.py (TOP of file, before you call load_pipeline)
 import numpy as np
 
+# --- hotfix for scikit-learn pickle mismatch ---
+import sklearn.compose._column_transformer as _ct
+# define the missing internal symbol so unpickling works
+class _RemainderColsList(list):
+    pass
+if not hasattr(_ct, "_RemainderColsList"):
+    _ct._RemainderColsList = _RemainderColsList
+# ----------------------------------------------
+
+
 def aspect_to_sin_cos(X):
     # X will be a 2D array-like with a single 'aspect' column (degrees)
     arr = np.asarray(X).astype(float)
