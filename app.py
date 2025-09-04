@@ -17,6 +17,11 @@ def aspect_to_sin_cos(X):
     # ensure 2D shape for sklearn
     return np.c_[sin_col, cos_col]
 
+# make unpickling robust on Streamlit Cloud
+import sys
+sys.modules["__main__"].__dict__["aspect_to_sin_cos"] = aspect_to_sin_cos
+
+
 # warm up the pipeline
 load_pipeline("artifacts")
 
