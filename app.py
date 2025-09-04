@@ -48,6 +48,7 @@ with tab1:
     with c1:
         p1  = st.number_input("precip_1d (mm)", 0.0, 600.0, 10.0, 0.1)
         elev= st.number_input("elevation (m)",  -50.0, 10000.0, 50.0, 1.0)
+        elev = elev / 10
         asp = st.number_input("aspect (deg 0–360)", 0.0, 360.0, 180.0, 1.0)
     with c2:
         p3  = st.number_input("precip_3d (mm)", 0.0, 3000.0, 30.0, 0.1)
