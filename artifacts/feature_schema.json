@@ -1,0 +1,1 @@
+{"feature_order_input": ["precip_1d", "precip_3d", "elevation", "slope", "aspect", "landcover"], "engineered": ["aspect_sin", "aspect_cos"], "landcover_onehot_categories": [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "target": "flooded"}
